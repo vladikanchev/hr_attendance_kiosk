@@ -1,5 +1,5 @@
 
-odoo.define('hr_attendance_kiosk_limit_override.kiosk_logic', function (require) {
+odoo.define('hr_attendance_kiosk_limit_override_fixed.kiosk_logic', function (require) {
     "use strict";
 
     const publicWidget = require('web.public.widget');
@@ -41,10 +41,12 @@ odoo.define('hr_attendance_kiosk_limit_override.kiosk_logic', function (require)
             setTimeout(() => box.remove(), 2000);
 
             // Гласово съобщение
-            const synth = window.speechSynthesis;
-            const utterance = new SpeechSynthesisUtterance(speech);
-            utterance.lang = "bg-BG";
-            synth.speak(utterance);
+            if ('speechSynthesis' in window) {
+                const synth = window.speechSynthesis;
+                const utterance = new SpeechSynthesisUtterance(speech);
+                utterance.lang = "bg-BG";
+                synth.speak(utterance);
+            }
         }
     });
 });
