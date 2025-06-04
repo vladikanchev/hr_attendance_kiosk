@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="assets_frontend_inherit" inherit_id="web.assets_frontend" name="Kiosk Voice Assets">
-    <xpath expr="//body" position="inside">
-      <script type="text/javascript" src="/hr_attendance_kiosk_limit_override_fixed/static/src/js/kiosk_override.js"/>
+    <xpath expr="." position="inside">
+      <script type="text/javascript" src="/hr_attendance_kiosk_limit_override_fixed/static/src/js/kiosk_override.js"></script>
     </xpath>
   </template>
 </odoo>
